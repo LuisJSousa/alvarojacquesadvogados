@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="pt-PT" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escritório de Advogados Álvaro Jacques - Clary Sage</title>
+    <title>Escritório de Advogados Álvaro Jacques - Greyscale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,23 +13,16 @@
             theme: {
                 extend: {
                     colors: {
-                        white: '#4A4B46',
-                        black: '#F2F0E9',
                         dark: {
-                            DEFAULT: '#F2F0E9',
-                            100: '#FFFFFF',
-                            200: '#E5E3DB',
-                            300: '#B5B3AA',
-                        },
-                        gray: {
-                            300: '#60615C',
-                            400: '#7A7B76',
-                            500: '#94958F',
+                            DEFAULT: '#000000',
+                            100: '#1A1A1A',
+                            200: '#333333',
+                            300: '#4D4D4D',
                         },
                         gold: {
-                            400: '#8D9B82',
-                            500: '#7C8A71',
-                            600: '#6A7860',
+                            400: '#808080',
+                            500: '#666666',
+                            600: '#4D4D4D',
                         }
                     },
                     fontFamily: {
@@ -47,27 +40,27 @@
     <style>
         body { 
             font-family: 'Montserrat', sans-serif;
-            background-color: #F2F0E9;
-            color: #4A4B46;
+            background-color: #000000;
+            color: #E6E6E6;
         }
         h1, h2, h3, h4, .font-serif { 
             font-family: 'Cinzel', serif; 
         }
         
         /* Thin lines and borders */
-        .border-thin-gold { border-color: rgba(141, 155, 130, 0.4); }
-        .bg-thin-gold { background-color: rgba(141, 155, 130, 0.15); }
+        .border-thin-gold { border-color: rgba(128, 128, 128, 0.3); }
+        .bg-thin-gold { background-color: rgba(128, 128, 128, 0.1); }
         
         /* Subtle gold glow */
         .glow-gold:hover {
-            box-shadow: 0 0 20px rgba(141, 155, 130, 0.25);
+            box-shadow: 0 0 20px rgba(128, 128, 128, 0.15);
         }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F2F0E9; }
-        ::-webkit-scrollbar-thumb { background: #B5B3AA; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #8D9B82; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #333333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #808080; }
     </style>
 </head>
 <body class="antialiased selection:bg-gold-500/30 selection:text-gold-400">
@@ -99,7 +92,7 @@
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-dark z-10 opacity-80"></div>
             <!-- Placeholder for luxury dark image -->
-            <img src="https://images.unsplash.com/photo-1505664173615-04d1bf03816a?auto=format&fit=crop&q=80" alt="Premium Law" class="w-full h-full object-cover grayscale opacity-20 mix-blend-multiply">
+            <img src="https://images.unsplash.com/photo-1505664173615-04d1bf03816a?auto=format&fit=crop&q=80" alt="Premium Law" class="w-full h-full object-cover grayscale opacity-30 mix-blend-overlay">
             
             <!-- Geometric Gold Accents -->
             <div class="absolute top-1/4 left-10 w-px h-64 bg-gradient-to-b from-transparent via-gold-400/50 to-transparent z-20"></div>
