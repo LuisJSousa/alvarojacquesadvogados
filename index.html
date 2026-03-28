@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritório de Advogados Álvaro Jacques - Clary Sage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
@@ -13,28 +13,76 @@
             theme: {
                 extend: {
                     colors: {
-                        white: '#4A4B46',
-                        black: '#F2F0E9',
+                        surface: '#fbf9f2',
+                        'surface-dim': '#dcdad3',
+                        'surface-variant': '#e4e2dc',
+                        'surface-bright': '#fbf9f2',
+                        'surface-container-lowest': '#ffffff',
+                        'surface-container-low': '#f6f4ec',
+                        'surface-container': '#f0eee7',
+                        'surface-container-high': '#eae8e1',
+                        'surface-container-highest': '#e4e2dc',
+                        background: '#fbf9f2',
+                        primary: '#56624d',
+                        'primary-container': '#8e9b83',
+                        'primary-fixed': '#dae7cd',
+                        'primary-fixed-dim': '#becbb2',
+                        tertiary: '#735b2b',
+                        'tertiary-container': '#af935e',
+                        'tertiary-fixed': '#ffdea5',
+                        'tertiary-fixed-dim': '#e2c289',
+                        secondary: '#5e5f59',
+                        'secondary-container': '#e4e3db',
+                        'secondary-fixed': '#e4e3db',
+                        'secondary-fixed-dim': '#c7c7bf',
+                        outline: '#757870',
+                        'outline-variant': '#c5c8be',
+                        'on-surface': '#1b1c18',
+                        'on-surface-variant': '#444841',
+                        'on-background': '#1b1c18',
+                        'on-primary': '#ffffff',
+                        'on-primary-container': '#273221',
+                        'on-primary-fixed': '#141e0e',
+                        'on-primary-fixed-variant': '#3f4a37',
+                        'on-secondary': '#ffffff',
+                        'on-secondary-container': '#64655f',
+                        'on-secondary-fixed': '#1b1c18',
+                        'on-secondary-fixed-variant': '#464742',
+                        'on-tertiary': '#ffffff',
+                        'on-tertiary-container': '#3f2c01',
+                        'on-tertiary-fixed': '#261900',
+                        'on-tertiary-fixed-variant': '#594316',
+                        white: '#ffffff',
+                        black: '#1b1c18',
                         dark: {
-                            DEFAULT: '#F2F0E9',
-                            100: '#FFFFFF',
-                            200: '#E5E3DB',
-                            300: '#B5B3AA',
+                            DEFAULT: '#fbf9f2',
+                            100: '#ffffff',
+                            200: '#e4e2dc',
+                            300: '#c5c8be',
                         },
                         gray: {
-                            300: '#60615C',
-                            400: '#7A7B76',
-                            500: '#94958F',
+                            300: '#64655f',
+                            400: '#5e5f59',
+                            500: '#444841',
                         },
                         gold: {
-                            400: '#8D9B82',
-                            500: '#7C8A71',
-                            600: '#6A7860',
+                            400: '#af935e',
+                            500: '#735b2b',
+                            600: '#594316',
                         }
                     },
                     fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Noto Serif', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                        headline: ['Noto Serif', 'serif'],
+                        body: ['Manrope', 'sans-serif'],
+                        label: ['Manrope', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '0.125rem',
+                        lg: '0.25rem',
+                        xl: '0.5rem',
+                        full: '0.75rem',
                     },
                     letterSpacing: {
                         widest: '.2em',
@@ -46,49 +94,57 @@
     </script>
     <style>
         body { 
-            font-family: 'Montserrat', sans-serif;
-            background-color: #F2F0E9;
-            color: #4A4B46;
+            font-family: 'Manrope', sans-serif;
+            background-color: #fbf9f2;
+            color: #1b1c18;
         }
         h1, h2, h3, h4, .font-serif { 
-            font-family: 'Cinzel', serif; 
+            font-family: 'Noto Serif', serif; 
         }
+        .font-headline {
+            font-family: 'Noto Serif', serif;
+        }
+        .font-body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .text-balanced { text-wrap: balance; }
+        .bg-frosted { backdrop-filter: blur(20px); }
         
         /* Thin lines and borders */
-        .border-thin-gold { border-color: rgba(141, 155, 130, 0.4); }
-        .bg-thin-gold { background-color: rgba(141, 155, 130, 0.15); }
+        .border-thin-gold { border-color: rgba(86, 98, 77, 0.16); }
+        .bg-thin-gold { background-color: rgba(86, 98, 77, 0.08); }
         
         /* Subtle gold glow */
         .glow-gold:hover {
-            box-shadow: 0 0 20px rgba(141, 155, 130, 0.25);
+            box-shadow: 0 18px 48px rgba(27, 28, 24, 0.08);
         }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F2F0E9; }
-        ::-webkit-scrollbar-thumb { background: #B5B3AA; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #8D9B82; }
+        ::-webkit-scrollbar-track { background: #f6f4ec; }
+        ::-webkit-scrollbar-thumb { background: #c5c8be; border-radius: 12px; }
+        ::-webkit-scrollbar-thumb:hover { background: #56624d; }
     </style>
 </head>
-<body class="antialiased selection:bg-gold-500/30 selection:text-gold-400">
-    
+<body class="antialiased bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+
     <!-- Navbar (Minimalist) -->
-    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-md border-b border-thin-gold transition-all duration-500 py-4">
+    <nav class="fixed w-full z-50 bg-surface/90 bg-frosted border-b border-thin-gold transition-all duration-500 py-4">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
             <div class="flex-shrink-0 flex items-center gap-4 group">
-                <div class="w-8 h-8 border border-gold-400 flex items-center justify-center rotate-45 group-hover:bg-gold-400 transition-colors duration-500">
-                    <span class="font-serif text-gold-400 group-hover:text-dark text-xs -rotate-45 block transition-colors duration-500">AJ</span>
+                <div class="w-8 h-8 border border-primary/30 rounded-sm flex items-center justify-center rotate-45 group-hover:bg-primary transition-colors duration-500">
+                    <span class="font-serif text-primary group-hover:text-on-primary text-xs -rotate-45 block transition-colors duration-500">AJ</span>
                 </div>
                 <div class="hidden sm:flex flex-col">
-                    <span class="font-serif text-lg text-white tracking-widest leading-none">ÁLVARO JACQUES</span>
-                    <span class="text-[0.6rem] text-gold-400 tracking-superwide uppercase mt-1 opacity-80">Advogados</span>
+                    <span class="font-serif text-lg text-on-surface tracking-widest leading-none">ÁLVARO JACQUES</span>
+                    <span class="text-[0.6rem] text-tertiary tracking-superwide uppercase mt-1 opacity-80">Advogados</span>
                 </div>
             </div>
-            <div class="hidden md:flex space-x-12 text-xs font-light text-gray-400 tracking-widest uppercase">
-                <a href="#home" class="hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300">Início</a>
-                <a href="#escritorio" class="hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300">Escritório</a>
-                <a href="#expertise" class="hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300">Expertise</a>
-                <a href="#contactos" class="hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300">Contactos</a>
+            <div class="hidden md:flex space-x-12 text-xs font-medium text-on-surface-variant tracking-widest uppercase">
+                <a href="#home" class="hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Início</a>
+                <a href="#escritorio" class="hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Escritório</a>
+                <a href="#expertise" class="hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Expertise</a>
+                <a href="#contactos" class="hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Contactos</a>
             </div>
         </div>
     </nav>
@@ -97,9 +153,9 @@
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <!-- Abstract Dark/Gold Background -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-dark z-10 opacity-80"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/85 to-surface/30 z-10"></div>
             <!-- Placeholder for luxury dark image -->
-            <img src="https://images.unsplash.com/photo-1505664173615-04d1bf03816a?auto=format&fit=crop&q=80" alt="Premium Law" class="w-full h-full object-cover grayscale opacity-20 mix-blend-multiply">
+            <img src="https://images.unsplash.com/photo-1505664173615-04d1bf03816a?auto=format&fit=crop&q=80" alt="Premium Law" class="w-full h-full object-cover grayscale opacity-15 mix-blend-multiply">
             
             <!-- Geometric Gold Accents -->
             <div class="absolute top-1/4 left-10 w-px h-64 bg-gradient-to-b from-transparent via-gold-400/50 to-transparent z-20"></div>
@@ -108,35 +164,35 @@
 
         <div class="relative z-20 text-center px-6 max-w-5xl mx-auto flex flex-col items-center">
             <div class="w-px h-16 bg-gold-400 mb-10 opacity-70"></div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white tracking-wider leading-tight mb-8">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-headline text-on-surface tracking-tight leading-tight mb-8 text-balanced">
                 ESCRITÓRIO DE ADVOGADOS <br>
-                <span class="text-gold-400 mt-4 block">ÁLVARO JACQUES</span>
+                <span class="text-primary mt-4 block italic">ÁLVARO JACQUES</span>
             </h1>
-            <p class="text-gray-400 font-light text-sm md:text-base tracking-widest uppercase max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p class="text-on-surface-variant font-light text-sm md:text-base tracking-widest uppercase max-w-2xl mx-auto mb-12 leading-relaxed">
                 Experiência, Profissionalismo e Exclusividade na Defesa dos Seus Direitos Civis.
             </p>
             
-            <a href="#contactos" class="group relative inline-flex items-center justify-center px-8 py-4 font-light text-xs tracking-widest text-white uppercase overflow-hidden border border-thin-gold hover:border-gold-400 transition-colors duration-500">
-                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+            <a href="#contactos" class="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-xs tracking-widest text-on-primary uppercase overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors duration-500 rounded-sm">
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-sm opacity-20 bg-gradient-to-b from-transparent via-transparent to-black"></span>
                 <span class="relative z-10 flex items-center gap-3">
-                    Agendar Consulta Privada <i data-lucide="chevron-right" class="w-4 h-4 text-gold-400 group-hover:translate-x-1 transition-transform"></i>
+                    Agendar Consulta Privada <i data-lucide="chevron-right" class="w-4 h-4 text-on-primary group-hover:translate-x-1 transition-transform"></i>
                 </span>
             </a>
         </div>
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 opacity-50 animate-bounce">
-            <span class="text-[10px] uppercase tracking-widest text-gold-400">Scroll</span>
-            <div class="w-px h-8 bg-gold-400"></div>
+            <span class="text-[10px] uppercase tracking-widest text-primary">Scroll</span>
+            <div class="w-px h-8 bg-primary"></div>
         </div>
     </section>
 
     <!-- Currículos / Equipa -->
-    <section id="escritorio" class="py-32 relative bg-dark border-t border-thin-gold">
+    <section id="escritorio" class="py-32 relative bg-surface border-t border-thin-gold">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             <div class="flex flex-col items-center text-center mb-24">
-                <h2 class="text-3xl md:text-4xl font-serif text-white tracking-wider mb-6">Advogados</h2>
-                <div class="w-12 h-px bg-gold-400"></div>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface tracking-tight mb-6">Advogados</h2>
+                <div class="w-12 h-px bg-primary/30"></div>
             </div>
             
             <div class="space-y-32">
@@ -144,28 +200,28 @@
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-4 lg:col-start-2 relative">
                         <div class="absolute -inset-4 border border-thin-gold -z-10 translate-x-4 translate-y-4"></div>
-                        <div class="aspect-[3/4] bg-dark-100 flex flex-col items-center justify-center border border-dark-200 glow-gold transition-all duration-500 overflow-hidden group">
+                        <div class="aspect-[3/4] bg-surface-container flex flex-col items-center justify-center border border-outline-variant glow-gold transition-all duration-500 overflow-hidden group rounded-lg">
                             <!-- Image Placeholder -->
-                            <div class="w-full h-full bg-dark-200 flex items-center justify-center relative">
-                                <i data-lucide="image" class="w-12 h-12 text-gold-400/30"></i>
-                                <span class="absolute bottom-4 text-gold-400/50 text-[10px] tracking-widest uppercase">Fotografia</span>
+                            <div class="w-full h-full bg-surface-container-highest flex items-center justify-center relative">
+                                <i data-lucide="image" class="w-12 h-12 text-primary/30"></i>
+                                <span class="absolute bottom-4 text-tertiary/60 text-[10px] tracking-widest uppercase">Fotografia</span>
                             </div>
                         </div>
                     </div>
                     <div class="lg:col-span-6 lg:col-start-7">
                         <div class="pl-0 lg:pl-10 border-l border-thin-gold/0 lg:border-thin-gold py-4">
                             <div class="mb-8">
-                                <h3 class="text-2xl font-serif text-white mb-2">Álvaro M B Jacques Sousa</h3>
-                                <p class="text-gold-400 text-xs tracking-widest uppercase">Advogado</p>
+                                <h3 class="text-2xl font-headline text-on-surface mb-2">Álvaro M B Jacques Sousa</h3>
+                                <p class="text-tertiary text-xs tracking-widest uppercase">Advogado</p>
                             </div>
-                            <i data-lucide="quote" class="w-8 h-8 text-dark-300 mb-6 fill-current"></i>
-                            <p class="text-gray-300 font-light leading-loose text-sm md:text-base text-justify mb-8">
+                            <i data-lucide="quote" class="w-8 h-8 text-outline-variant mb-6 fill-current"></i>
+                            <p class="text-on-surface-variant font-light leading-loose text-sm md:text-base text-justify mb-8">
                                 Advogado com uma carreira de mais de 33 anos na prática jurídica. Inscrito na Ordem dos Advogados desde 17 de junho de 1992, possui uma vasta experiência acumulada desde a sua formação na Faculdade de Direito da Universidade de Coimbra (1988). Fundador do escritório no Porto, onde coordena as áreas de Direito Civil e Comercial, destacando-se pela sua longevidade e profundo conhecimento do sistema jurídico português.
                             </p>
                             <div class="flex flex-col gap-3">
-                                <p class="text-gray-500 text-[10px] tracking-widest uppercase">Cédula 4244P</p>
-                                <a href="mailto:alvaro.jacques-4244p@advogados.oa.pt" class="inline-flex items-center gap-3 text-xs text-gold-400 tracking-widest uppercase hover:text-white transition-colors group">
-                                    <div class="w-8 h-px bg-gold-400 group-hover:w-12 transition-all duration-300"></div>
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 4244P</p>
+                                <a href="mailto:alvaro.jacques-4244p@advogados.oa.pt" class="inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                    <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     alvaro.jacques-4244p@advogados.oa.pt
                                 </a>
                             </div>
@@ -178,17 +234,17 @@
                     <div class="lg:col-span-6 lg:col-start-2 order-2 lg:order-1">
                         <div class="pr-0 lg:pr-10 border-r border-thin-gold/0 lg:border-thin-gold py-4 text-left lg:text-right flex flex-col items-start lg:items-end">
                             <div class="mb-8 text-left lg:text-right">
-                                <h3 class="text-2xl font-serif text-white mb-2">João Pedro de Carvalho</h3>
-                                <p class="text-gold-400 text-xs tracking-widest uppercase">Advogado</p>
+                                <h3 class="text-2xl font-headline text-on-surface mb-2">João Pedro de Carvalho</h3>
+                                <p class="text-tertiary text-xs tracking-widest uppercase">Advogado</p>
                             </div>
-                            <i data-lucide="quote" class="w-8 h-8 text-dark-300 mb-6 fill-current rotate-180"></i>
-                            <p class="text-gray-300 font-light leading-loose text-sm md:text-base text-justify lg:text-right mb-8">
+                            <i data-lucide="quote" class="w-8 h-8 text-outline-variant mb-6 fill-current rotate-180"></i>
+                            <p class="text-on-surface-variant font-light leading-loose text-sm md:text-base text-justify lg:text-right mb-8">
                                 Advogado com mais de 25 anos de experiência no exercício da advocacia. Inscrito na Ordem dos Advogados em 02 de fevereiro de 1999. A sua atividade é marcada por uma atuação consistente em litígios civis e assessoria jurídica, contribuindo para a estrutura sénior do escritório com foco na resolução de casos complexos de Direito Civil.
                             </p>
                             <div class="flex flex-col items-start lg:items-end gap-3 w-full">
-                                <p class="text-gray-500 text-[10px] tracking-widest uppercase">Cédula 7459P</p>
-                                <a href="mailto:j.p.carvalho-7459p@adv.oa.pt" class="inline-flex flex-row-reverse items-center gap-3 text-xs text-gold-400 tracking-widest uppercase hover:text-white transition-colors group">
-                                    <div class="w-8 h-px bg-gold-400 group-hover:w-12 transition-all duration-300"></div>
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 7459P</p>
+                                <a href="mailto:j.p.carvalho-7459p@adv.oa.pt" class="inline-flex flex-row-reverse items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                    <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     j.p.carvalho-7459p@adv.oa.pt
                                 </a>
                             </div>
@@ -196,11 +252,11 @@
                     </div>
                     <div class="lg:col-span-4 lg:col-start-8 order-1 lg:order-2 relative">
                         <div class="absolute -inset-4 border border-thin-gold -z-10 -translate-x-4 translate-y-4"></div>
-                        <div class="aspect-[3/4] bg-dark-100 flex flex-col items-center justify-center border border-dark-200 glow-gold transition-all duration-500 overflow-hidden group">
+                        <div class="aspect-[3/4] bg-surface-container flex flex-col items-center justify-center border border-outline-variant glow-gold transition-all duration-500 overflow-hidden group rounded-lg">
                             <!-- Image Placeholder -->
-                            <div class="w-full h-full bg-dark-200 flex items-center justify-center relative">
-                                <i data-lucide="image" class="w-12 h-12 text-gold-400/30"></i>
-                                <span class="absolute bottom-4 text-gold-400/50 text-[10px] tracking-widest uppercase">Fotografia</span>
+                            <div class="w-full h-full bg-surface-container-highest flex items-center justify-center relative">
+                                <i data-lucide="image" class="w-12 h-12 text-primary/30"></i>
+                                <span class="absolute bottom-4 text-tertiary/60 text-[10px] tracking-widest uppercase">Fotografia</span>
                             </div>
                         </div>
                     </div>
@@ -210,28 +266,28 @@
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-4 lg:col-start-2 relative">
                         <div class="absolute -inset-4 border border-thin-gold -z-10 translate-x-4 translate-y-4"></div>
-                        <div class="aspect-[3/4] bg-dark-100 flex flex-col items-center justify-center border border-dark-200 glow-gold transition-all duration-500 overflow-hidden group">
+                        <div class="aspect-[3/4] bg-surface-container flex flex-col items-center justify-center border border-outline-variant glow-gold transition-all duration-500 overflow-hidden group rounded-lg">
                             <!-- Image Placeholder -->
-                            <div class="w-full h-full bg-dark-200 flex items-center justify-center relative">
-                                <i data-lucide="image" class="w-12 h-12 text-gold-400/30"></i>
-                                <span class="absolute bottom-4 text-gold-400/50 text-[10px] tracking-widest uppercase">Fotografia</span>
+                            <div class="w-full h-full bg-surface-container-highest flex items-center justify-center relative">
+                                <i data-lucide="image" class="w-12 h-12 text-primary/30"></i>
+                                <span class="absolute bottom-4 text-tertiary/60 text-[10px] tracking-widest uppercase">Fotografia</span>
                             </div>
                         </div>
                     </div>
                     <div class="lg:col-span-6 lg:col-start-7">
                         <div class="pl-0 lg:pl-10 border-l border-thin-gold/0 lg:border-thin-gold py-4">
                             <div class="mb-8">
-                                <h3 class="text-2xl font-serif text-white mb-2">Beatriz Jacques</h3>
-                                <p class="text-gold-400 text-xs tracking-widest uppercase">Advogada</p>
+                                <h3 class="text-2xl font-headline text-on-surface mb-2">Beatriz Jacques</h3>
+                                <p class="text-tertiary text-xs tracking-widest uppercase">Advogada</p>
                             </div>
-                            <i data-lucide="quote" class="w-8 h-8 text-dark-300 mb-6 fill-current"></i>
-                            <p class="text-gray-300 font-light leading-loose text-sm md:text-base text-justify mb-8">
+                            <i data-lucide="quote" class="w-8 h-8 text-outline-variant mb-6 fill-current"></i>
+                            <p class="text-on-surface-variant font-light leading-loose text-sm md:text-base text-justify mb-8">
                                 Advogada com uma formação académica de excelência, detendo os graus de Licenciada pela Universidade do Porto e Mestre pela Faculdade de Direito da Universidade de Coimbra. Com 5 anos de experiência, Beatriz guia este escritório de advogados para o futuro com elevado sentido de responsabilidade e profissionalismo. Alia o rigor científico à modernização da atividade, garantindo uma advocacia de proximidade e confiança.
                             </p>
                             <div class="flex flex-col gap-3">
-                                <p class="text-gray-500 text-[10px] tracking-widest uppercase">Cédula 63917P</p>
-                                <a href="mailto:beatrizjacques-63917P@adv.oa.pt" class="inline-flex items-center gap-3 text-xs text-gold-400 tracking-widest uppercase hover:text-white transition-colors group">
-                                    <div class="w-8 h-px bg-gold-400 group-hover:w-12 transition-all duration-300"></div>
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 63917P</p>
+                                <a href="mailto:beatrizjacques-63917P@adv.oa.pt" class="inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                    <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     beatrizjacques-63917P@adv.oa.pt
                                 </a>
                             </div>
@@ -243,65 +299,76 @@
     </section>
 
     <!-- Expertise -->
-    <section id="expertise" class="py-32 bg-dark-100 border-y border-thin-gold relative overflow-hidden">
-        <!-- Decorativo -->
-        <div class="absolute top-0 right-0 w-64 h-64 border border-thin-gold rounded-full translate-x-1/2 -translate-y-1/2 opacity-20"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 border border-thin-gold rounded-full -translate-x-1/2 translate-y-1/2 opacity-20"></div>
-
+    <section id="expertise" class="py-32 bg-surface-container-low border-y border-thin-gold relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-serif text-white tracking-wider mb-6">Expertise</h2>
-                    <div class="w-12 h-px bg-gold-400"></div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+                <div class="max-w-2xl">
+                    <span class="text-[0.75rem] font-bold tracking-[0.2rem] text-tertiary uppercase block mb-4">Domínios</span>
+                    <h2 class="text-4xl md:text-5xl font-headline text-on-surface tracking-tight">Áreas de Especialidade</h2>
                 </div>
-                <div class="text-right">
-                    <p class="text-[10px] tracking-widest uppercase text-gold-400 mb-2">Especialidade</p>
-                    <p class="text-gray-400 font-light text-sm tracking-wider">Direito Civil</p>
-                </div>
+                <p class="text-on-surface-variant font-light max-w-sm mb-2">
+                    Atuamos com precisão técnica em nichos estratégicos do direito contemporâneo.
+                </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-thin-gold">
-                <div class="bg-dark-100 p-10 flex flex-col items-center text-center group hover:bg-dark transition-colors duration-500">
-                    <div class="w-16 h-16 rounded-full border border-thin-gold flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-                        <span class="font-serif text-gold-400 text-xl group-hover:scale-110 transition-transform duration-500">I</span>
-                    </div>
-                    <h4 class="text-sm font-serif text-white tracking-wider uppercase mb-4">Responsabilidade Civil</h4>
-                    <p class="text-xs text-gray-500 font-light leading-relaxed">Assessoria integral em danos e compensações com rigoroso sigilo.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
+                <div class="group border-t-2 border-tertiary/20 pt-8 hover:border-primary transition-all duration-500">
+                    <i data-lucide="briefcase-business" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Direito Corporativo</h3>
+                    <p class="text-on-surface-variant font-light leading-relaxed mb-6">
+                        Consultoria em fusões, aquisições e estruturação de governança corporativa para empresas de alto crescimento.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> M&amp;A Estratégico
+                        </li>
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> Governança de Risco
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-dark-100 p-10 flex flex-col items-center text-center group hover:bg-dark transition-colors duration-500">
-                    <div class="w-16 h-16 rounded-full border border-thin-gold flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-                        <span class="font-serif text-gold-400 text-xl group-hover:scale-110 transition-transform duration-500">II</span>
-                    </div>
-                    <h4 class="text-sm font-serif text-white tracking-wider uppercase mb-4">Direito dos Seguros</h4>
-                    <p class="text-xs text-gray-500 font-light leading-relaxed">Análise minuciosa e resolução de complexos litígios seguradores.</p>
+                <div class="group border-t-2 border-tertiary/20 pt-8 hover:border-primary transition-all duration-500">
+                    <i data-lucide="wallet" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Direito Fiscal &amp; Tributário</h3>
+                    <p class="text-on-surface-variant font-light leading-relaxed mb-6">
+                        Planeamento fiscal nacional e internacional focado na otimização de patrimónios familiares e empresariais.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> Planeamento sucessório
+                        </li>
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> Contencioso tributário
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-dark-100 p-10 flex flex-col items-center text-center group hover:bg-dark transition-colors duration-500">
-                    <div class="w-16 h-16 rounded-full border border-thin-gold flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-                        <span class="font-serif text-gold-400 text-xl group-hover:scale-110 transition-transform duration-500">III</span>
-                    </div>
-                    <h4 class="text-sm font-serif text-white tracking-wider uppercase mb-4">Direito Imobiliário</h4>
-                    <p class="text-xs text-gray-500 font-light leading-relaxed">Proteção patrimonial e acompanhamento em transações de alto valor.</p>
-                </div>
-
-                <div class="bg-dark-100 p-10 flex flex-col items-center text-center group hover:bg-dark transition-colors duration-500">
-                    <div class="w-16 h-16 rounded-full border border-thin-gold flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-                        <span class="font-serif text-gold-400 text-xl group-hover:scale-110 transition-transform duration-500">IV</span>
-                    </div>
-                    <h4 class="text-sm font-serif text-white tracking-wider uppercase mb-4">Direito das Sucessões</h4>
-                    <p class="text-xs text-gray-500 font-light leading-relaxed">Planeamento sucessório e partilhas geridas com suprema discrição.</p>
+                <div class="group border-t-2 border-tertiary/20 pt-8 hover:border-primary transition-all duration-500">
+                    <i data-lucide="gavel" class="w-8 h-8 text-primary mb-6"></i>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Litigância de Alta Complexidade</h3>
+                    <p class="text-on-surface-variant font-light leading-relaxed mb-6">
+                        Representação em tribunais superiores e arbitragem internacional para resolução de disputas comerciais.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> Arbitragem Comercial
+                        </li>
+                        <li class="flex items-center text-xs font-medium tracking-wide text-on-surface/70 uppercase">
+                            <span class="w-1.5 h-1.5 bg-tertiary/40 rounded-full mr-3"></span> Defesa de Propriedade
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contactos & Mapa -->
-    <section id="contactos" class="py-32 bg-dark">
+    <section id="contactos" class="py-32 bg-surface-container">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex flex-col items-center text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-serif text-white tracking-wider mb-6">Audência Privada</h2>
-                <div class="w-12 h-px bg-gold-400"></div>
+                <h2 class="text-3xl md:text-4xl font-headline text-on-surface tracking-tight mb-6">Audência Privada</h2>
+                <div class="w-12 h-px bg-primary/30"></div>
             </div>
 
             <div class="grid lg:grid-cols-5 gap-16 items-start">
@@ -310,41 +377,41 @@
                 <div class="lg:col-span-2 space-y-16">
                     <div class="space-y-8 border-l border-thin-gold pl-8">
                         <div>
-                            <p class="text-[10px] tracking-widest uppercase text-gold-400 mb-2">Localização</p>
-                            <p class="text-gray-300 font-light text-sm leading-relaxed">Rua de João Andresen, 90 - 1.º Esq<br>Junto ao Hosp. Prelada, 4250-242 Porto</p>
+                            <p class="text-[10px] tracking-widest uppercase text-tertiary mb-2">Localização</p>
+                            <p class="text-on-surface-variant font-light text-sm leading-relaxed">Rua de João Andresen, 90 - 1.º Esq<br>Junto ao Hosp. Prelada, 4250-242 Porto</p>
                         </div>
                         <div>
-                            <p class="text-[10px] tracking-widest uppercase text-gold-400 mb-2">Comunicação</p>
-                            <p class="text-gray-300 font-light text-sm">+351 222 030 863</p>
+                            <p class="text-[10px] tracking-widest uppercase text-tertiary mb-2">Comunicação</p>
+                            <p class="text-on-surface-variant font-light text-sm">+351 222 030 863</p>
                         </div>
                     </div>
 
                     <form class="space-y-6">
                         <div class="space-y-2">
-                            <label class="text-[10px] tracking-widest uppercase text-gray-500">O Seu Nome</label>
-                            <input type="text" class="w-full bg-transparent border-b border-dark-300 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors rounded-none" required>
+                            <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">O Seu Nome</label>
+                            <input type="text" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] tracking-widest uppercase text-gray-500">Correio Eletrónico</label>
-                            <input type="email" class="w-full bg-transparent border-b border-dark-300 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors rounded-none" required>
+                            <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Correio Eletrónico</label>
+                            <input type="email" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] tracking-widest uppercase text-gray-500">Assunto</label>
-                            <input type="text" class="w-full bg-transparent border-b border-dark-300 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors rounded-none" required>
+                            <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Assunto</label>
+                            <input type="text" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] tracking-widest uppercase text-gray-500">Mensagem</label>
-                            <textarea rows="3" class="w-full bg-transparent border-b border-dark-300 py-2 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors rounded-none resize-none" required></textarea>
+                            <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Mensagem</label>
+                            <textarea rows="3" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none resize-none" required></textarea>
                         </div>
-                        <button type="submit" class="w-full border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-dark py-4 text-xs tracking-widest uppercase transition-all duration-500 mt-8">
+                        <button type="submit" class="w-full border border-primary bg-primary text-on-primary hover:bg-primary/90 py-4 text-xs tracking-widest uppercase transition-all duration-500 mt-8 rounded-sm">
                             Solicitar Contacto
                         </button>
                     </form>
                 </div>
 
                 <!-- Mapa -->
-                <div class="lg:col-span-3 h-[600px] border border-thin-gold p-2 bg-dark-100 relative group">
-                    <div class="absolute inset-0 border border-gold-400/20 scale-[0.98] group-hover:scale-100 transition-transform duration-500 pointer-events-none z-10"></div>
+                <div class="lg:col-span-3 h-[600px] border border-thin-gold p-2 bg-surface-container-highest relative group rounded-xl overflow-hidden">
+                    <div class="absolute inset-0 border border-primary/10 scale-[0.98] group-hover:scale-100 transition-transform duration-500 pointer-events-none z-10 rounded-lg"></div>
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!4v1774708537153!6m8!1m7!1sevYwXwkMqxQO2-Cx0ssMUw!2m2!1d41.17065998482197!2d-8.62727704834941!3f59.49340448390146!4f1.5608569895504019!5f0.7820865974627469" 
                         width="100%" 
@@ -353,11 +420,11 @@
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
-                        class="grayscale opacity-50 contrast-125 group-hover:opacity-80 transition-opacity duration-700 w-full h-full object-cover"
+                        class="grayscale opacity-70 contrast-125 group-hover:opacity-90 transition-opacity duration-700 w-full h-full object-cover"
                         title="Google Street View - Rua de João Andresen, 90, Porto">
                     </iframe>
                     <!-- Overlay escuro sobre o mapa para não quebrar a estética -->
-                    <div class="absolute inset-2 bg-dark/20 pointer-events-none group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute inset-2 bg-surface/20 pointer-events-none group-hover:bg-transparent transition-colors duration-500 rounded-lg"></div>
                 </div>
 
             </div>
@@ -365,12 +432,12 @@
     </section>
 
     <!-- Footer Minimalista -->
-    <footer class="bg-dark text-center border-t border-thin-gold py-12 relative overflow-hidden">
+    <footer class="bg-surface-container-low text-center border-t border-thin-gold py-12 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="w-8 h-8 mx-auto border border-gold-400/30 flex items-center justify-center rotate-45 mb-8">
-                <span class="font-serif text-gold-400/50 text-xs -rotate-45 block">AJ</span>
+            <div class="w-8 h-8 mx-auto border border-primary/20 rounded-sm flex items-center justify-center rotate-45 mb-8">
+                <span class="font-serif text-primary/60 text-xs -rotate-45 block">AJ</span>
             </div>
-            <p class="text-gray-500 text-[10px] tracking-widest uppercase font-light">&copy; 2023 Álvaro Jacques. A Tradição do Direito.</p>
+            <p class="text-on-surface-variant text-[10px] tracking-widest uppercase font-light">&copy; 2023 Álvaro Jacques. A Tradição do Direito.</p>
         </div>
     </footer>
 
