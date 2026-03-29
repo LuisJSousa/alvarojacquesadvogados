@@ -1,1 +1,0 @@
-window.WEB3FORMS_ACCESS_KEY = '1cf418f5-2871-4ecd-8026-bc3a6286bc99';
