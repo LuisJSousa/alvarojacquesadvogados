@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="web3forms.config.js"></script>
+    <script src="email_utils.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -221,7 +223,8 @@
                             </p>
                             <div class="flex flex-col gap-3">
                                 <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 4244P</p>
-                                <a href="mailto:alvaro.jacques-4244p@advogados.oa.pt" class="inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Idiomas: Português, Inglês e Francês</p>
+                                <a href="mailto:alvaro.jacques-4244p@advogados.oa.pt" data-contact-lawyer="Álvaro Jacques" data-contact-email="alvaro.jacques-4244p@advogados.oa.pt" class="lawyer-contact-link inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
                                     <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     alvaro.jacques-4244p@advogados.oa.pt
                                 </a>
@@ -243,7 +246,8 @@
                             </p>
                             <div class="flex flex-col items-start lg:items-end gap-3 w-full">
                                 <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 7459P</p>
-                                <a href="mailto:j.p.carvalho-7459p@adv.oa.pt" class="inline-flex flex-row-reverse items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Idiomas: Português e Inglês</p>
+                                <a href="mailto:j.p.carvalho-7459p@adv.oa.pt" data-contact-lawyer="João Pedro de Carvalho" data-contact-email="j.p.carvalho-7459p@adv.oa.pt" class="lawyer-contact-link inline-flex flex-row-reverse items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
                                     <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     j.p.carvalho-7459p@adv.oa.pt
                                 </a>
@@ -287,7 +291,8 @@
                             </p>
                             <div class="flex flex-col gap-3">
                                 <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Cédula 63917P</p>
-                                <a href="mailto:beatrizjacques-63917P@adv.oa.pt" class="inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
+                                <p class="text-on-surface-variant/70 text-[10px] tracking-widest uppercase">Idiomas: Português, Inglês e Espanhol</p>
+                                <a href="mailto:beatrizjacques-63917P@adv.oa.pt" data-contact-lawyer="Beatriz Jacques" data-contact-email="beatrizjacques-63917P@adv.oa.pt" class="lawyer-contact-link inline-flex items-center gap-3 text-xs text-primary tracking-widest uppercase hover:text-tertiary transition-colors group">
                                     <div class="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300"></div>
                                     beatrizjacques-63917P@adv.oa.pt
                                 </a>
@@ -405,23 +410,24 @@
 
                     <h3 class="text-lg font-headline text-on-surface tracking-tight">Formulario de contacto</h3>
 
-                    <form class="space-y-6">
+                    <form id="general-contact-form" class="space-y-6">
                         <div class="space-y-2">
                             <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">O Seu Nome</label>
-                            <input type="text" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                            <input type="text" name="name" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Correio Eletrónico</label>
-                            <input type="email" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                            <input type="email" name="email" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Assunto</label>
-                            <input type="text" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                            <input type="text" name="subject" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Mensagem</label>
-                            <textarea rows="3" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none resize-none" required></textarea>
+                            <textarea rows="3" name="message" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none resize-none" required></textarea>
                         </div>
+                        <p id="general-contact-status" class="hidden text-xs tracking-wide"></p>
                         <button type="submit" class="w-full border border-primary bg-primary text-on-primary hover:bg-primary/90 py-4 text-xs tracking-widest uppercase transition-all duration-500 mt-8 rounded-sm">
                             Solicitar Contacto
                         </button>
@@ -460,8 +466,161 @@
         </div>
     </footer>
 
+    <div id="contact-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-6">
+        <div class="absolute inset-0 bg-black/50" data-close-contact-modal></div>
+        <div class="relative w-full max-w-2xl border border-thin-gold bg-surface-container-low shadow-2xl rounded-xl p-8 md:p-10">
+            <button type="button" id="contact-modal-close" class="absolute right-5 top-5 text-on-surface-variant hover:text-primary transition-colors" aria-label="Fechar formulário de contacto">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="mb-8 pr-10">
+                <p class="text-[10px] tracking-widest uppercase text-tertiary mb-3">Contacto Direto</p>
+                <h3 id="contact-modal-title" class="text-2xl font-headline text-on-surface tracking-tight">Enviar email</h3>
+                <p id="contact-modal-subtitle" class="text-sm text-on-surface-variant font-light mt-3">Preencha o formulário para enviar uma mensagem.</p>
+            </div>
+
+            <form id="lawyer-contact-form" class="space-y-6">
+                <input type="hidden" name="toName">
+                <input type="hidden" name="toEmail">
+
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">O Seu Nome</label>
+                    <input type="text" name="name" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Correio Eletrónico</label>
+                    <input type="email" name="email" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Assunto</label>
+                    <input type="text" name="subject" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none" required>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest uppercase text-on-surface-variant/70">Mensagem</label>
+                    <textarea rows="4" name="message" class="w-full bg-transparent border-b border-outline-variant py-2 text-sm text-on-surface focus:outline-none focus:border-primary transition-colors rounded-none resize-none" required></textarea>
+                </div>
+                <p id="lawyer-contact-status" class="hidden text-xs tracking-wide"></p>
+                <button type="submit" class="w-full border border-primary bg-primary text-on-primary hover:bg-primary/90 py-4 text-xs tracking-widest uppercase transition-all duration-500 rounded-sm">
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        const contactModal = document.getElementById('contact-modal');
+        const contactModalClose = document.getElementById('contact-modal-close');
+        const contactModalTitle = document.getElementById('contact-modal-title');
+        const contactModalSubtitle = document.getElementById('contact-modal-subtitle');
+        const lawyerContactForm = document.getElementById('lawyer-contact-form');
+        const lawyerContactStatus = document.getElementById('lawyer-contact-status');
+        const generalContactForm = document.getElementById('general-contact-form');
+        const generalContactStatus = document.getElementById('general-contact-status');
+        const lawyerContactLinks = document.querySelectorAll('.lawyer-contact-link');
+
+        function setStatus(element, message, isError) {
+            element.textContent = message;
+            element.classList.remove('hidden', 'text-primary', 'text-red-700');
+            element.classList.add(isError ? 'text-red-700' : 'text-primary');
+        }
+
+        function clearStatus(element) {
+            element.textContent = '';
+            element.classList.add('hidden');
+            element.classList.remove('text-primary', 'text-red-700');
+        }
+
+        function closeContactModal() {
+            contactModal.classList.add('hidden');
+            contactModal.style.display = '';
+            document.body.style.overflow = '';
+            clearStatus(lawyerContactStatus);
+        }
+
+        function openContactModal(lawyerName, lawyerEmail, e) {
+            if (e) e.preventDefault();
+
+            contactModalTitle.textContent = `Enviar email para ${lawyerName}`;
+            contactModalSubtitle.textContent = `A sua mensagem será enviada diretamente para ${lawyerName}.`;
+            lawyerContactForm.elements.toName.value = lawyerName;
+            lawyerContactForm.elements.toEmail.value = lawyerEmail;
+            contactModal.style.display = 'flex';
+            contactModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            queueMicrotask(() => {
+                lawyerContactForm.elements.email.focus();
+            });
+        }
+
+        async function handleSubmit(form, statusElement, fallbackRecipient) {
+            clearStatus(statusElement);
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalLabel = submitButton.textContent.trim();
+            submitButton.disabled = true;
+            submitButton.textContent = 'A enviar...';
+
+            try {
+                const formData = new FormData(form);
+                await window.EmailUtils.sendEmail({
+                    fromName: formData.get('name'),
+                    fromEmail: formData.get('email'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message'),
+                    toName: formData.get('toName') || fallbackRecipient.name,
+                    toEmail: formData.get('toEmail') || fallbackRecipient.email
+                });
+
+                form.reset();
+                setStatus(statusElement, 'Mensagem enviada com sucesso.', false);
+                return true;
+            } catch (error) {
+                setStatus(statusElement, error.message || 'Não foi possível enviar a mensagem.', true);
+                return false;
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalLabel;
+            }
+        }
+
+        lawyerContactLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                openContactModal(link.dataset.contactLawyer, link.dataset.contactEmail, event);
+            });
+        });
+
+        document.querySelectorAll('[data-close-contact-modal]').forEach((element) => {
+            element.addEventListener('click', closeContactModal);
+        });
+
+        contactModalClose.addEventListener('click', closeContactModal);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+                closeContactModal();
+            }
+        });
+
+        lawyerContactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const success = await handleSubmit(lawyerContactForm, lawyerContactStatus, window.EmailUtils.DEFAULT_RECIPIENT);
+            if (success) {
+                setTimeout(closeContactModal, 1200);
+            }
+        });
+
+        generalContactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            await handleSubmit(generalContactForm, generalContactStatus, window.EmailUtils.DEFAULT_RECIPIENT);
+        });
+
+        contactModal.addEventListener('click', (event) => {
+            if (event.target === contactModal) {
+                closeContactModal();
+            }
+        });
     </script>
 </body>
 </html>
